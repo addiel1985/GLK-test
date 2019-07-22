@@ -1,0 +1,27 @@
+<div class="example-container">
+  <mat-card>
+    <form fxLayout="column" [formGroup]="commentForm" name="commentForm">
+      <div>
+        <mat-form-field class="example-full-width">
+          <textarea
+            matInput
+            placeholder="Leave a comment"
+            rows="6"
+            formControlName="comment"
+            required
+          ></textarea>
+        </mat-form-field>
+      </div>
+      <div>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="onAddComment()"
+          [disabled]="commentForm.invalid"
+        >
+          Add Comment
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>

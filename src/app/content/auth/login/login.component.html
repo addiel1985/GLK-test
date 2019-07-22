@@ -1,0 +1,44 @@
+<div class="example-container" fxLayout="column" fxLayoutAlign="center center">
+  <mat-card>
+    <form
+      fxLayout="column"
+      fxLayoutAlign="start start"
+      [formGroup]="loginForm"
+      name="loginForm"
+    >
+      <mat-form-field class="example-full-width">
+        <input
+          matInput
+          type="email"
+          placeholder="Type email"
+          formControlName="email"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input
+          matInput
+          type="password"
+          placeholder="Type password"
+          formControlName="password"
+          required
+        />
+      </mat-form-field>
+
+      <div>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="onLogin()"
+          [disabled]="loginForm.invalid"
+        >
+          Login
+        </button>
+      </div>
+    </form>
+    <p *ngIf="error !== ''">
+      {{ error }}
+    </p>
+    <p><a href="auth/register">Register</a></p>
+  </mat-card>
+</div>

@@ -1,0 +1,18 @@
+app-blog-collection {
+  mat-card {
+    width: 500px;
+    margin: 10px auto;
+    @media screen and(max-width: 600px) {
+      width: calc(100% - 50px);
+    }
+    mat-card-content {
+      font-size: 16px;
+    }
+    .mat-card-footer {
+      margin: 0;
+      .info {
+        font-size: 13px;
+      }
+    }
+  }
+}

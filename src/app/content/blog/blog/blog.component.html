@@ -1,0 +1,21 @@
+<div fxLayout="column">
+  <!--The content below is only a placeholder and can be replaced.-->
+  <mat-toolbar color="primary" class="fix-nav">
+    <div class="nav-brand">
+      {{ _authService.getUserLogged().displayName }}
+    </div>
+
+    <span class="nav-spacer"></span>
+
+    <button mat-icon-button (click)="onLoggedout()">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <div>
+    <app-blog-form></app-blog-form>
+  </div>
+  <div>
+    <app-blog-collection></app-blog-collection>
+  </div>
+</div>

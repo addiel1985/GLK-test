@@ -1,0 +1,60 @@
+<div class="example-container" fxLayout="column" fxLayoutAlign="center center">
+  <mat-card>
+    <form
+      fxLayout="column"
+      fxLayoutAlign="start start"
+      [formGroup]="registerForm"
+      name="commentForm"
+    >
+      <mat-form-field class="example-full-width">
+        <input
+          matInput
+          placeholder="Type name"
+          formControlName="fullName"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input
+          matInput
+          type="email"
+          placeholder="Type email"
+          formControlName="email"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input
+          matInput
+          type="password"
+          placeholder="Type password"
+          formControlName="password"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input
+          matInput
+          type="password"
+          placeholder="Type password"
+          formControlName="confirmPassword"
+          required
+        />
+      </mat-form-field>
+      <div>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="onRegister()"
+          [disabled]="registerForm.invalid"
+        >
+          Register
+        </button>
+      </div>
+    </form>
+    <p *ngIf="error !== ''">
+      {{ error }}
+    </p>
+    <p><a href="auth/login">Login</a></p>
+  </mat-card>
+</div>
